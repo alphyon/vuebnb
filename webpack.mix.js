@@ -1,3 +1,4 @@
+require('dotenv').config();
 let mix = require('laravel-mix');
 
 /*
@@ -12,4 +13,14 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .styles(
+        [
+            'resources/assets/css/style.css',
+            'node_modules/open-sans-all/css/open-sans.css',
+            'node_modules/font-awesome/css/font-awesome.css',
+        ], 'public/css/style.css'
+    )
+    .copy('node_modules/open-sans-all/fonts','public/fonts')
+    .copy('node_modules/font-awesome/fonts','public/fonts')
+    .copy('resources/assets/images','public/images');
+   // .sass('resources/assets/sass/app.scss', 'public/css');
