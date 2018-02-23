@@ -22,5 +22,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
     )
     .copy('node_modules/open-sans-all/fonts','public/fonts')
     .copy('node_modules/font-awesome/fonts','public/fonts')
-    .copy('resources/assets/images','public/images');
+    .copy('resources/assets/images','public/images')
+    .options({extractVueStyles: 'public/css/vue-style.css'});
    // .sass('resources/assets/sass/app.scss', 'public/css');
